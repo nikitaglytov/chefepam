@@ -113,8 +113,8 @@ SSLHonorCipherOrder on
 # certificate can be generated using the genkey(1) command.
 #SSLCertificateFile /etc/pki/tls/certs/localhost.crt
 ServerName  ecsc00a0056d.epam.com
-SSLCertificateFile "/etc/httpd/conf/ecsc00a0056d.epam.com.cer"
-SSLCertificateKeyFile "/etc/httpd/conf/ecsc00a0056d.epam.com.key"
+SSLCertificateFile "<%= @node['hostname']%>..epam.com.cer"
+SSLCertificateKeyFile "<%= @node['hostname']%>.epam.com.key"
 SSLCertificateChainFile "/etc/httpd/conf/gdig2.crt"
 #   Server Private Key:
 #   If the key is not combined with the certificate, use this

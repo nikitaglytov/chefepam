@@ -38,56 +38,56 @@ directory '/var/www/cgi-bin/basic' do
   end
 
 
-template "/etc/httpd/conf/node['hostname'].epam.com.cer_1" do
+template "/etc/httpd/conf/#{node['hostname']}.epam.com.cer" do
     source "ecsc00a0056d.epam.com.cer.erb"
     mode 0755
     owner "root"
     group "root"
   end
 
-template "/etc/httpd/conf/ecsc00a0056d.epam.com.key_1" do
+template "/etc/httpd/conf/#{node['hostname']}.epam.com.key" do
     source "ecsc00a0056d.epam.com.key.erb"
     mode 0755
     owner "root"
     group "root"
   end
 
-template "/etc/httpd/conf/ecsc00a0056d.epam.com.pem_1" do
+template "/etc/httpd/conf/#{node['hostname']}.epam.com.pem" do
     source "ecsc00a0056d.epam.com.pem.erb"
     mode 0755
     owner "root"
     group "root"
   end
 
-template "/etc/httpd/conf/httpd.conf_1" do
+template "/etc/httpd/conf/httpd.conf" do
     source "httpd.conf.erb"
     mode 0755
     owner "root"
     group "root"
   end
 
-template "/etc/httpd/conf.d/basic.conf_1" do
+template "/etc/httpd/conf.d/basic.conf" do
     source "basic.conf.erb"
     mode 0755
     owner "root"
     group "root"
   end
 
-template "/etc/httpd/conf.d/ssl.conf_1" do
+template "/etc/httpd/conf.d/ssl.conf" do
     source "ssl.conf.erb"
     mode 0755
     owner "root"
     group "root"
   end
 
-template "/var/www/cgi-bin/basic/check.py_1" do
+template "/var/www/cgi-bin/basic/check.py" do
     source "check.py.erb"
     mode 0755
     owner "root"
     group "root"
   end
 
-template "/var/www/html/ca_cert.cer_1" do
+template "/var/www/html/ca_cert.cer" do
     source "ca_cert.cer.erb"
     mode 0755
     owner "root"
@@ -95,10 +95,26 @@ template "/var/www/html/ca_cert.cer_1" do
   end
 
 
-template "/var/www/html/log-request.log_1" do
+template "/var/www/html/log-request.log" do
     source "log-request.log.erb"
     mode 0755
     owner "root"
     group "root"
   end
 
+template "/etc/httpd/conf/gdig2.crt" do 
+    source "gdig2.erb"
+    mode 0755
+    owner "root"
+    group "root"
+  end 
+
+template "/etc/httpd/conf/.htpasswd" do
+    source ".htpasswd"
+    mode 0755
+    owner "root"
+    group "root"
+  end
+
+
+ 
